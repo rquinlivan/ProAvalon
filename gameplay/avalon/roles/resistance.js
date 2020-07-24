@@ -3,10 +3,10 @@ class Resistance {
     constructor(thisRoom) {
         this.thisRoom = thisRoom;
 
-        this.role = 'Resistance';
+        this.role = 'Loyal Servant of Arthur';
         this.alliance = 'Resistance';
 
-        this.description = 'A standard Resistance member.';
+        this.description = 'Standard issue good guy who knows nothing.';
     }
 
     see() {

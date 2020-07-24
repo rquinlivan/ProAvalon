@@ -10,15 +10,20 @@ class Oberon {
     }
 
     // Oberon only sees him/herself
+    // rq hax: Oberon sees everyone, but they don't see him
     see() {
         if (this.thisRoom.gameStarted === true) {
             const obj = {};
             const array = [];
 
             for (let i = 0; i < this.thisRoom.playersInGame.length; i++) {
-                if (this.thisRoom.playersInGame[i].role === 'Oberon') {
-                    array.push(this.thisRoom.playersInGame[i].username);
-                    break;
+                if (this.thisRoom.playersInGame[i].alliance === 'Spy') {
+                    if (this.thisRoom.playersInGame[i].role === 'Oberon') {
+                        // don't add oberon
+                    } else {
+                        // add the spy
+                        array.push(this.thisRoom.playersInGame[i].username);
+                    }
                 }
             }
 

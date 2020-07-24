@@ -3,10 +3,10 @@ class Spy {
     constructor(thisRoom) {
         this.thisRoom = thisRoom;
 
-        this.role = 'Spy';
+        this.role = 'Minion of Mordred';
         this.alliance = 'Spy';
 
-        this.description = 'A standard Spy member.';
+        this.description = 'Standard issue bad guy.';
     }
 
     // Spy sees all spies except oberon
