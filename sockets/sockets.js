@@ -1725,7 +1725,7 @@ var actionsObj = {
           nextRoomId++;
         }
         dataObj = {
-          maxNumPlayers: 10,
+          maxNumPlayers: 15,
           newRoomPassword: '',
           gameMode: 'avalonBot',
         };

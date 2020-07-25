@@ -142,7 +142,7 @@ $('#newRoom').on('click', (data) => {
     // password empty default
     $('#newRoomPassword').val('');
     // 10p default
-    $('.maxNumPlayers').val('10');
+    $('.maxNumPlayers').val('15');
 
     // $(".gun").css("visibility", "hidden");
 

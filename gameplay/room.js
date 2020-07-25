@@ -29,9 +29,9 @@ function Room(host_, roomId_, io_, maxNumPlayers_, newRoomPassword_, gameMode_, 
         newRoomPassword_ = undefined;
     }
 
-    if (maxNumPlayers_ === '' || maxNumPlayers_ < 5 || maxNumPlayers_ > 10) {
-        maxNumPlayers_ = 10;
-    }
+    // if (maxNumPlayers_ === '' || maxNumPlayers_ < 5 || maxNumPlayers_ > 10) {
+    //   maxNumPlayers_ = 10;
+    // }
 
     // Object input variables
     this.host = host_;
@@ -363,10 +363,10 @@ Room.prototype.getSocketsOfSpectators = function () {
 };
 
 Room.prototype.updateMaxNumPlayers = function (socket, number) {
-    if (socket.request.user.username === this.host && number >= 5 && number <= 10) {
-        this.maxNumPlayers = number;
-        this.updateRoomPlayers();
-    }
+    //if (socket.request.user.username === this.host && number >= 5 && number <= 10) {
+    //    this.maxNumPlayers = number;
+    //    this.updateRoomPlayers();
+    //}
 };
 
 Room.prototype.updateRanked = function (socket, rankedType) {
@@ -445,7 +445,7 @@ Room.prototype.sendOutGameModesInRoomToSocket = function (targetSocket) {
     const cardDescriptions = [];
     const cardPriorities = [];
 
-    const skipRoles = ['Resistance', 'Spy'];
+    const skipRoles = ['Loyal Servant of Arthur', 'Minion of Mordred'];
 
     for (var key in this.specialRoles) {
         if (this.specialRoles.hasOwnProperty(key) === true) {
