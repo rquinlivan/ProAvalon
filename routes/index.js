@@ -195,14 +195,14 @@ router.post('/', registerLimiter, sanitiseUsername, sanitiseEmail, async (req, r
 });
 
 
-const loginLimiter = process.env.MY_PLATFORM === 'local'
-    ? rateLimit({
+const loginLimiter = rateLimit({
+      // hax: disable
         max: 0, // Disable if we are local
-    })
-    : rateLimit({
-        windowMs: 15 * 60 * 1000, // 15 minutes
-        max: 5,
     });
+   // : rateLimit({
+   //     windowMs: 15 * 60 * 1000, // 15 minutes
+   //     max: 5,
+   // });
 
 // login route
 router.post('/login', loginLimiter, sanitiseUsername, passport.authenticate('local', {
